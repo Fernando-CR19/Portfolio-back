@@ -3,6 +3,9 @@
 /node_modules
 /build
 
+# session whatsapp
+/auth_info_bailyes
+
 # Logs
 logs
 *.log
