@@ -18,11 +18,9 @@ export class WhatsappController {
     @Body() body: { phone: string; message: string },
   ): Promise<{ success: boolean; message: string }> {
     try {
-      const myNumber = process.env.MY_NUMBER;
-
       const jid = body.phone.includes('@')
         ? body.phone
-        : `${myNumber}@s.whatsapp.net`;
+        : `${body.phone}@s.whatsapp.net`;
 
       await this.whatsappService.sendMessage(jid, body.message);
       return {
